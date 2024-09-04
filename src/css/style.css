@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -66,25 +66,17 @@ body {
     border: none;
     margin-top: 1rem;
 }
-.btn-primary {
+ .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
     transition: background-color .5s;
-}
-.btn-primary:hover {
-    background-color: #fff;
-    color: #58af9b;
 }
 .btn-second {
     background-color: #000000;
     border: 1px solid #000000;
     transition: background-color .5s;
 }
-.btn-second:hover {
-    background-color: #fff;
-    border: 1px solid #58af9b;
-    color: #58af9b;
-}
+
 .first-content {
     display: flex;
 }
@@ -347,7 +339,6 @@ input:-webkit-autofill
         width: 90%;
     }
     
-
     @keyframes deslocamentoEsq {
         from {
             top: 0;
@@ -386,28 +377,6 @@ input:-webkit-autofill
         }
     }
     
-    @keyframes slidein {
-        from {
-            top: 0;
-            height: 40%;
-        }
-        25% {
-            top: 5%;
-            height: 50%;
-        }
-        50% {
-            top: 25%;
-            height: 60%;
-        }
-        75% {
-            top: 45%;
-            height: 50%;
-        }
-        to {
-            top: 60%;
-            height: 40%;
-        }
-    }
     
     @keyframes slideout {
         from {
@@ -433,40 +402,8 @@ input:-webkit-autofill
     }
 }
 
-@media screen and (max-width: 740px) {
-    .form {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .form {
-        width: 100%;
-    }
-}
-
-
 .success-message {
     text-align: center;
     margin-top: 20px;
 }
 
-.success-message .title-second {
-    color: #000000;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.success-message .btn-second {
-    background-color: #000000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.success-message .btn-second:hover {
-    background-color: #000000;
-}
