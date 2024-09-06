@@ -456,10 +456,10 @@ input:-webkit-autofill
 }
 
 
-.task-actions {
+/* .task-actions {
     display: flex;
     gap: 10px; 
-}
+} */
 
 .task-actions button {
     background-color: transparent;
