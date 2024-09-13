@@ -1,0 +1,52 @@
+
+auto preenchimento 
+
+/* input:-webkit-autofill 
+{    
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+} */
+
+
+
+Bootstrap
+Validator.js 
+
+Pode ser usada para criar, organizar e gerenciar tarefas de forma visual (estilo Kanban).
+Suporte a colunas para diferentes status de tarefas (A Fazer, Fazendo, Concluído).
+Trello API
+
+
+Oferece um sistema robusto de gerenciamento de tarefas e banco de dados.
+Integração fácil com frontend para criar tarefas, projetos e rastrear o progresso.
+Notion API
+
+Simples e direta para integração com tarefas pessoais.
+Pode ser usada para criar, atualizar, e excluir tarefas programaticamente.
+Google Tasks API
+
+
+Uma API para criar e gerenciar o backend de forma eficiente.
+Integração com bancos de dados, autenticação e gerenciamento de rotas.
+Express.js
+
+
+Framework completo que permite desenvolvimento rápido de APIs RESTful.
+Facilita a criação de sistemas de autenticação e gerenciamento de tarefas.
+Django
+
+
+
+
+
+
+MongoDB Atlas
+
+Um banco de dados NoSQL escalável e fácil de integrar com aplicativos frontend e backend.
+MongoDB Atlas
+
+
+Firebase Realtime Database / Firestore
+
+Permite armazenar e sincronizar dados em tempo real entre clientes.
+Firebase Firestore

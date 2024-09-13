@@ -2,37 +2,33 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HealthTrack</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
     <div class="container" id="authContainer">
         <div class="content first-content">
             <div class="first-column">
                 <h2 class="title title-primary">Bem-vindo de volta!</h2>
-                <p class="description description-primary">Para manter-se conectado conosco</p>
-                <p class="description description-primary">por favor, faça login com suas informações pessoais</p>
+                <!-- <p class="description description-primary">Para manter-se conectado conosco</p> -->
+                <p class="description description-primary">Por favor, faça login com suas informações pessoais!</p>
                 <button id="signin" class="btn btn-primary">Entrar</button>
             </div>    
             <div class="second-column">
                 <h2 class="title title-second">Criar Conta</h2>
                 <form class="form" id="signupForm">
                     <label class="label-input" for="username">
-                        <i class="far fa-user icon-modify"></i>
+                        <!-- <i class="far fa-user icon-modify"></i> -->
                         <input type="text" id="username" placeholder="Nome">
                     </label>
                     
                     <label class="label-input" for="email">
-                        <i class="far fa-envelope icon-modify"></i>
+                        <!-- <i class="far fa-envelope icon-modify"></i> -->
                         <input type="email" id="email" placeholder="Email">
                     </label>
                     
                     <label class="label-input" for="password">
-                        <i class="fas fa-lock icon-modify"></i>
+                        <!-- <i class="fas fa-lock icon-modify"></i> -->
                         <input type="password" id="password" placeholder="Senha">
                     </label>
                     
@@ -43,14 +39,14 @@
                     <h2 class="title title-second">Cadastro feito com sucesso!</h2>
                     <button id="goToLogin" class="btn btn-second">Ir para Login</button>
                 </div>
-                
             </div>
         </div>
+
         <div class="content second-content">
             <div class="first-column">
                 <h2 class="title title-primary">Olá, amigo!</h2>
                 <p class="description description-primary">Insira seus dados pessoais</p>
-                <p class="description description-primary">e comece a jornada conosco</p>
+                <!-- <p class="description description-primary">e comece a jornada conosco</p> -->
                 <button id="signup" class="btn btn-primary">Cadastrar</button>
             </div>
             <div class="second-column">
@@ -71,20 +67,36 @@
         </div>
     </div>
 
-            <div id="taskListContainer">
-                <input type="text" id="newTaskInput" placeholder="Nova tarefa...">
-                <button id="addTaskButton">Adicionar Tarefa</button>
+    <div class="task-container" id="taskContainer" style="display: none;">
+        <h1 class="task-title">Minhas Tarefas</h1>
+        
+        <div class="task-content">
+            <div class="task-list" id="taskList">
             </div>
-
-            <!-- <div class="task-item"> -->
-                <h2>Minhas Tarefa</h2>
-                <!-- <div class="task-actions">
-                    <button class="complete">✅</button>
-                    <button class="edit">✎</button>
-                    <button class="delete">❌</button>
-                </div> -->
+    
+            <div class="task-form">
+                <h2 class="task-form-title">Adicionar Tarefas</h2>
+                <form>
+                    <label for="taskTitle">Digite sua tarefa</label>
+                    <input type="text" id="taskTitle" class="task-input" placeholder="Digite sua tarefa">
+    
+                    <label for="taskResponsible">Responsável pela tarefa</label>
+                    <input type="text" id="taskResponsible" class="task-input" placeholder="Digite o responsável">
+    
+                    <label for="taskPriority">Grau de Prioridade (1 a 5)</label>
+                    <input type="number" id="taskPriority" class="task-input" min="1" max="5" placeholder="1">
+    
+                    <label for="taskDate">Data de Entrega</label>
+                    <input type="date" id="taskDate" class="task-input">
+    
+                    <button type="button" id="addTaskButton" class="task-btn task-btn-final-add-task">Adicionar Tarefa</button>
+                </form>
+                
+                <button type="button" id="logoutButton" class="task-btn task-btn-logout">Sair para Tela de Login</button>
             </div>
+        </div>
     </div>
+
     <script src="js/app.js"></script>
 </body>
 </html>
