@@ -352,7 +352,7 @@ body {
 
 /* Lista de tarefas */
 .task-list {
-    flex: 3;
+    flex: 4;
     padding: 10px;
     border-right: 1px solid #000;
 }
@@ -360,6 +360,8 @@ body {
 /* Estilo para cada item de tarefa */
 .task-item {
     background-color: #f0f0f0;
+    display: flex;
+    justify-content:space-evenly;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -419,3 +421,4 @@ label {
 .task-btn:hover {
     background-color: #2c2b2c; 
 }
+

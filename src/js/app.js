@@ -1,6 +1,3 @@
-// Evento para quando o DOM é completamente carregado
-// document.addEventListener('DOMContentLoaded', function () {
-
     // Elementos do botão de login e signup
     let btnSignin = document.querySelector("#signin");
     let btnSignup = document.querySelector("#signup");
@@ -88,6 +85,10 @@
     let taskPriority = document.getElementById('taskPriority');
     let taskDate = document.getElementById('taskDate');
 
+         // Variáveis de controle
+        let isEditing = false;
+        let currentTaskItem = null; // Variável para armazenar o item de tarefa que está sendo editado
+
     // Evento para adicionar nova tarefa à lista de tarefas
     addTaskButton.addEventListener('click', function () {
         let title = taskTitle.value.trim();
@@ -96,7 +97,7 @@
         let date = taskDate.value;
 
         // Verifica se todos os campos estão preenchidos
-        if (title !== '' && responsible !== '' && priority !== '' && date !== '') {
+        if (title !== '' || responsible !== '' || priority !== '' || date !== '') {
 
             // Cria o elemento de tarefa
             let taskItem = document.createElement('div');
@@ -119,11 +120,29 @@
             taskDetailDate.classList.add('task-detail');
             taskDetailDate.textContent = 'Data de Entrega: ' + new Date(date).toLocaleDateString();
 
-            // Adiciona os detalhes ao item de tarefa
+                // Botão de editar tarefa
+            let editButton = document.createElement('button');
+            editButton.classList.add('task-btn');
+            editButton.textContent = 'Editar';
+            editButton.addEventListener('click', function () {
+            editTask(taskItem, title, responsible, priority, date);
+        });
+
+            // Botão de excluir tarefa
+            let deleteButton = document.createElement('button');
+            deleteButton.classList.add('task-btn');
+            deleteButton.textContent = 'Excluir';
+            deleteButton.addEventListener('click', function () {
+                deleteTask(taskItem);
+            });
+
+            // Adiciona os detalhes e botões ao item de tarefa
             taskItem.appendChild(taskDetailTitle);
             taskItem.appendChild(taskDetailResponsible);
             taskItem.appendChild(taskDetailPriority);
             taskItem.appendChild(taskDetailDate);
+            taskItem.appendChild(editButton);
+            taskItem.appendChild(deleteButton);
 
             // Adiciona o item de tarefa à lista de tarefas
             taskList.appendChild(taskItem);
@@ -138,3 +157,35 @@
             alert('Preencha todos os campos antes de adicionar uma tarefa.');
         }
     });
+
+    // Função para remover a tarefa
+    function deleteTask(taskItem) {
+        taskItem.remove();
+    }
+
+    function editTask(taskItem, title, responsible, priority, date) {
+
+        taskTitle.value = title;
+        taskResponsible.value = responsible
+        taskPriority.value = priority
+        taskDate.value = date
+
+        taskItem.style.display = 'none';
+
+        // Define o estado de edição
+         isEditing = true;
+         currentTaskItem = taskItem;
+         addTaskButton.textContent = 'Salvar Alterações'; // Muda o texto do botão para indicar a edição
+
+        }
+
+  function updateTask(taskItem, title, responsible, priority, date) {
+        // Atualiza os detalhes da tarefa
+        taskItem.querySelector('.task-detail:nth-child(1)').textContent = 'Tarefa: ' + title;
+        taskItem.querySelector('.task-detail:nth-child(2)').textContent = 'Responsável: ' + responsible;
+        taskItem.querySelector('.task-detail:nth-child(3)').textContent = 'Prioridade: ' + priority;
+        taskItem.querySelector('.task-detail:nth-child(4)').textContent = 'data:' + new Date(date).toLocaleDateString();
+    
+    // Exibe a tarefa de volta na lista
+    taskItem.style.display = 'block';
+    }
